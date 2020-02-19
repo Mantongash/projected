@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Local Apps
     'api.apps.ApiConfig',
+    'app.apps.AppConfig',
 
     # Thirdparty Apps
     'rest_framework'
