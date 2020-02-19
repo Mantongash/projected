@@ -7,3 +7,6 @@ class Projects(models.Model):
   image = models.ImageField()
   description = models.TextField()
   link = models.CharField(max_length=100)
+
+  def __str__(self):
+    return self.title
