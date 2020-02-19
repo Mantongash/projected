@@ -6,15 +6,15 @@ from .models import Projects
 from django.contrib.auth.models import User
 from .serializers import ProjectsSerializer, UsersSerializer
 
-class ListTodo(generics.ListAPIView):
+class ListProjects(generics.ListAPIView):
   queryset = Projects.objects.all()
   serializer_class = ProjectsSerializer
 
-class DetailTodo(generics.RetrieveAPIView):
+class DetailProjects(generics.RetrieveAPIView):
   queryset = Projects.objects.all()
   serializer_class = ProjectsSerializer
 
 
-class ListTodo(generics.ListAPIView):
+class ListUsers(generics.ListAPIView):
   queryset = User.objects.all()
   serializer_class = UsersSerializer
