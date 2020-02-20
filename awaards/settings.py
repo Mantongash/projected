@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'app.apps.AppConfig',
 
     # Thirdparty Apps
-    'rest_framework'
+    'rest_framework',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,5 @@ REST_FRAMEWORK = {
 'rest_framework.permissions.AllowAny',
 ]
 }
+
+CRISPY_TEMPLATE_PACK = 'uni_form'
