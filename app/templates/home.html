@@ -5,4 +5,9 @@
   <h1>How Awesome are your projects?<small>Discover today at projected awards</small></h1>
   
 </header>
+<main>
+  {% for project in projects %}
+    {{project.description}}
+  {% endfor %}
+</main>
 {% endblock %}

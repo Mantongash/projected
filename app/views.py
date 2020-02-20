@@ -1,13 +1,15 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm, UserUpdateForm, ProfileUpdateForm, UploadForm
 from django.contrib.auth.models import User
+from api.models import Projects
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 def home(request):
-  return render(request, 'home.html')
+  projects = Projects.objects.all()
+  return render(request, 'home.html', {'projects':projects})
 
 def register(request):
     if request.method == "POST":
@@ -16,7 +18,7 @@ def register(request):
         register.save()
         username = register.cleaned_data.get("username")
         messages.success(request, ("Account for {} has been created successfully").format(username))
-        return redirect("login")
+        return redirect("signin")
     else:
       register=RegisterForm()
   
@@ -55,7 +57,7 @@ def upload(request):
     upload_form = UploadForm(request.POST, request.FILES)
     if upload_form.is_valid():
       upload_form.save()
-      return redirect("account_home")
+      return redirect("home")
   else:
     upload_form = UploadForm()
     
