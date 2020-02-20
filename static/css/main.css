@@ -31,3 +31,8 @@ header h1 {
 header h1 small {
   display: block;
 }
+
+.signup {
+  width: 50%;
+  margin: 0 auto;
+}
