@@ -4,7 +4,7 @@
 ## Author 
 ---
 
-Anthony Ng'ang'a
+**Anthony Ng'ang'a**
 
 ---
 ## Project Description
@@ -128,6 +128,3 @@ SOFTWARE.
 
 - You can reach me at any time using : - ngash.anto@gmail.com
 
-## Author
-
-**Anthony Ng'ang'a**
