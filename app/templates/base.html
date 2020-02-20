@@ -20,7 +20,7 @@
   <body>
     <!-- Begin Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
-      <a class="navbar-brand d-block mx-3" href="#">Projected Awards</a>
+      <a class="navbar-brand d-block mx-3" href="{% url 'home' %}">Projected Awards</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -35,18 +35,35 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto  d-flex align-items-center">
           <li class="nav-item active">
+            {% if user.is_authenticated %}
+            <li class="nav-item d-flex align-items-center">
+              <a class="nav-link" href="{% url 'signout' %}">Logout</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <a class="nav-link" href="{% url 'profile' %}">{{user.username}}</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="btn btn-info p-4 submit">Submit your project</a>
+            </li>
+            {% else %}
               <li class="nav-item d-flex align-items-center">
                 Are you a member?
                 <a class="nav-link" href="{% url 'register' %}">Register / Login</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="btn btn-info p-4 submit">Submit your project</a>
+                <a href="{% url 'upload' %}" class="btn btn-info p-4 submit">Submit your project</a>
               </li>
+              {% endif %}
           </li>
         </ul>
       </div>
     </nav>
     <!-- End Navbar -->
+
+    {% for message in messages %}
+      <p class='alert alert-{{message.tags}}'>{{message}}</p>
+    {% endfor %}
 
     {% block content %}
     {% endblock %}

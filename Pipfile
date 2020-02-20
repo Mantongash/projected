@@ -11,6 +11,8 @@ django-restframework = "*"
 djangorestframework = "*"
 pillow = "*"
 django-crispy-forms = "*"
+django-whitenoise = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.6"

@@ -4,9 +4,11 @@
 {% block content %}
 <h3 class="form-heading py-2">CREATE AN ACCOUNT</h3>
 <form action="" method="POST" class="signup">
+  {% csrf_token %}
   {{register | crispy}}
   <div class="">
     <input type="submit" class="btn btn-outline-info" value = "Sign Up">
+    <p class="text-muted">Already have an account? <a href="{% url 'signin' %}">Login</a></p>
   </div>
 </form>
 {% endblock %}

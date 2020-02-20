@@ -2,11 +2,12 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<h3 class="form-heading py-2">CREATE AN ACCOUNT</h3>
+<h3 class="form-heading py-2">LOG IN TO YOUR ACCOUNT</h3>
 <form action="" method="POST" class="signup">
-  {{register | crispy}}
+  {% csrf_token %}
+  {{form | crispy}}
   <div class="">
-    <input type="submit" class="btn btn-outline-info" value = "Sign Up">
+    <input type="submit" class="btn btn-outline-info" value = "Sign In">
   </div>
 </form>
 {% endblock %}
