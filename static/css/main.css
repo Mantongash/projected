@@ -34,7 +34,14 @@ header h1 small {
   display: block;
 }
 
+/* Form Styles */
+
 .signup {
   width: 50%;
   margin: 0 auto;
+}
+
+.form-heading {
+  font-family: "Kaushan Script";
+  text-align: center;
 }
