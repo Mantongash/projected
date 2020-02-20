@@ -5,3 +5,8 @@
 }
 
 /* Nav Styles */
+.submit {
+  text-transform: uppercase;
+  border-radius: 0;
+  
+}
