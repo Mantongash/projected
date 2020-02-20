@@ -1,15 +1,27 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <header>
-  <h1>How Awesome are your projects?<small>Discover today at projected awards</small></h1>
-  
+  <h1>
+    How Awesome are your projects?<small
+      >Discover today at projected awards</small
+    >
+  </h1>
 </header>
 <main>
-  {% for project in projects %}
-    <h3>{{project.title}}</h3>
-    <img src="{{project.image.url}}" alt="image loading..." width="300px" height="300px">
-    <p>{{project.description}}</p>
+  <div class="d-flex justify-content-center">
+    <div class="display containerpython manma">
+      {% for project in projects %}
+
+      <h3>{{project.title}}</h3>
+      <img
+        src="{{project.image.url}}"
+        alt="image loading..."
+        width="300px"
+        height="300px"
+      />
+      <p>{{project.description}}</p>
+    </div>
+  </div>
+
   {% endfor %}
 </main>
 {% endblock %}
